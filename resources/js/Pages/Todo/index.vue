@@ -7,7 +7,7 @@
                     <form @submit.prevent="NewTask()">
                         <div class="row">
                             <div class="insert lg col-8">
-                                <input type="text" name="title" id="title" v-model="title" class="form-control">
+                                <input type="text" name="title" id="title" v-model="TodoForm.title" class="form-control">
                             </div>
                             <div class="col-4">
                                 <input type="submit" value="" class="btn btn-primary">
@@ -61,7 +61,8 @@ export default {
     methods:{
         async NewTask(){
             try{
-                await axios.post(route('Todo.store'),this.TodoForm);
+                const respones=await axios.post(route('Todo.store'),this.TodoForm);
+                console.log(respones);
             }catch(error){
                 console.log('Error:',error);
             }
