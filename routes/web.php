@@ -23,6 +23,11 @@ Route::get("/",[HomeController::class,"index"])->name("home");
 Route::prefix('/todo')->group(function () {
     Route::get('/',[TodoController::class,'index'])->name("Todo.index");
     Route::post('/store',[TodoController::class,'store'])->name('Todo.store');
+    Route::get('/data',[TodoController::class,'data'])->name('data');
+    Route::get('{task_id}/delete',[TodoController::class,'delete'])->name('todo.delete');
+    Route::get('{task_id}/edit',[TodoController::class,'edit'])->name('todo.edit');
+    Route::post('{task_id}/update',[TodoController::class,'update'])->name('todo.update');
+    Route::post('{task_id}/status',[TodoController::class,'status'])->name('todo.status');
 });
 
 

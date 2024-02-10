@@ -3,6 +3,9 @@ import '../css/app.css';
 
 import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
 
+import 'font-awesome/scss/font-awesome.scss';
+
+
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
@@ -22,4 +25,5 @@ createInertiaApp({
     progress: {
         color: '#4B5563',
     },
+
 });

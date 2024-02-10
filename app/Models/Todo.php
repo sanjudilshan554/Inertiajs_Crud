@@ -11,5 +11,13 @@ class Todo extends Model
 
     protected $fillable = [
         'title',
+        'status',
     ];
+
+    // i'm from todo services of facade
+    public function updateUser($data, $id){
+        $task=$this->where('id', $id)->first();
+        $task->update($data);
+        return $task;
+    }
 }

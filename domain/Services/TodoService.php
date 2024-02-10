@@ -22,5 +22,24 @@ use App\Models\Todo;
         public function store($data) {
             return $this->task->create($data);
         }
+
+        public function delete($id) {
+            return $this->task->find($id)->delete();
+        }
+
+        public function getTask($id){
+            return $this->task->find($id);
+        }
+
+        public function update($data, $id){
+            // going to model
+           $this->task->updateUser($data, $id);
+        }
+
+        public function status($id) {
+            $task=$this->task->find($id);
+            $task->status= 1;
+            $task->save();
+        }
     }
 
